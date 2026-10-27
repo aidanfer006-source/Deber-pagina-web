@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea OVP: Real Madrid C.F. - Aidan Buenaño</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rmNavy: '#091C3E',
+                        rmNavyLight: '#122B57',
+                        rmGold: '#D4AF37',
+                        rmGoldBright: '#F3E5AB',
+                        rmGoldHover: '#B59226',
+                        rmBg: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B59226 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-navy-gradient {
+            background: linear-gradient(135deg, #091C3E 0%, #122B57 100%);
+        }
+        .gold-glow {
+            box-shadow: 0 4px 20px -2px rgba(212, 175, 55, 0.25);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 8px 30px -2px rgba(212, 175, 55, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rmGold selection:text-rmNavy">
+
+    <!-- Navegación Elegante -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-rmNavy/95 backdrop-blur-md border-b border-rmGold/30 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-rmGold to-rmGoldBright flex items-center justify-center text-rmNavy shadow-md font-extrabold text-lg">
+                    <i class="fa-solid fa-crown text-rmNavy"></i>
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-base tracking-wider block leading-tight">REAL MADRID C.F.</span>
+                    <span class="text-[10px] text-rmGold tracking-widest uppercase font-semibold">Tarea de OVP • Décimo</span>
+                </div>
+            </div>
+
+            <!-- Enlaces Desktop -->
+            <div class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider">
+                <a href="#inicio" class="hover:text-rmGold transition-colors">Inicio</a>
+                <a href="#ovp-valores" class="hover:text-rmGold transition-colors">Valores OVP</a>
+                <a href="#historia" class="hover:text-rmGold transition-colors">Historia & Palmarés</a>
+                <a href="#leyendas" class="hover:text-rmGold transition-colors">Leyendas</a>
+                <a href="#estadio" class="hover:text-rmGold transition-colors">Bernabéu</a>
+                <a href="#quiz" class="px-3 py-1.5 rounded-full bg-rmGold text-rmNavy font-bold hover:bg-rmGoldBright transition-all shadow-sm">Quiz</a>
+            </div>
+
+            <!-- Menú Móvil Botón -->
+            <button id="menuBtn" class="md:hidden text-rmGold text-xl focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobileMenu" class="hidden md:hidden bg-rmNavy border-b border-rmGold/20 px-4 py-4 space-y-2 text-sm font-medium">
+            <a href="#inicio" class="m-link block py-2 border-b border-white/5 hover:text-rmGold">Inicio / Ficha</a>
+            <a href="#ovp-valores" class="m-link block py-2 border-b border-white/5 hover:text-rmGold">Valores Vocacionales (OVP)</a>
+            <a href="#historia" class="m-link block py-2 border-b border-white/5 hover:text-rmGold">Historia & Palmarés</a>
+            <a href="#leyendas" class="m-link block py-2 border-b border-white/5 hover:text-rmGold">Leyendas del Club</a>
+            <a href="#estadio" class="m-link block py-2 border-b border-white/5 hover:text-rmGold">Santiago Bernabéu</a>
+            <a href="#quiz" class="m-link block py-2 text-rmGold font-bold">Quiz Interactivo</a>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION CON ENCABEZADO E INFORMACIÓN ESCOLAR DE OVP -->
+    <section id="inicio" class="relative bg-navy-gradient text-white pt-28 pb-20 overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Decoraciones sutiles de fondo -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-rmGold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Columna Izquierda: Presentación Tarea -->
+                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-rmGold/40 text-rmGold text-xs font-semibold tracking-wide">
+                        <i class="fa-solid fa-graduation-cap"></i> Proyecto Educativo de OVP
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight leading-tight">
+                        Real Madrid C.F.<br/>
+                        <span class="text-gold-gradient">Valores, Liderazgo y Excelencia Vocacional</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Un análisis del club más ganador de la historia desde la perspectiva de la Orientación Vocacional y Profesional: resiliencia, trabajo en equipo y metas de alto rendimiento.
+                    </p>
+
+                    <!-- Ficha del estudiante con datos reales -->
+                    <div class="bg-white/5 border border-rmGold/30 rounded-2xl p-4 sm:p-5 max-w-md mx-auto lg:mx-0 text-left backdrop-blur-sm gold-glow">
+                        <div class="flex items-center gap-2 mb-3 pb-2 border-b border-white/10">
+                            <i class="fa-solid fa-id-card text-rmGold text-sm"></i>
+                            <span class="text-xs font-bold uppercase tracking-wider text-rmGold">Ficha Escolar de Entrega</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 text-xs">
+                            <div>
+                                <span class="text-slate-400 block font-medium">Estudiante:</span>
+                                <span class="text-white font-bold text-sm">Aidan Buenaño</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block font-medium">Curso:</span>
+                                <span class="text-white font-bold text-sm">Décimo (10mo EGB)</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block font-medium">Materia:</span>
+                                <span class="text-rmGold font-bold text-sm">OVP</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block font-medium">Asignatura:</span>
+                                <span class="text-slate-200 font-semibold">Orientación Vocacional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center lg:justify-start">
+                        <a href="#ovp-valores" class="px-6 py-3 rounded-xl bg-rmGold text-rmNavy font-bold text-sm hover:bg-rmGoldBright transition-all shadow-md">
+                            Ver Sección OVP <i class="fa-solid fa-arrow-down ml-1"></i>
+                        </a>
+                        <a href="#quiz" class="px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white font-semibold text-sm hover:bg-white/20 transition-all">
+                            Quiz de Repaso <i class="fa-solid fa-gamepad ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Escudo Estilizado -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 bg-white/5 border-2 border-rmGold/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center gold-glow backdrop-blur-md">
+                        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-rmGold/30 to-transparent flex items-center justify-center border border-rmGold/50 mb-4">
+                            <i class="fa-solid fa-crown text-6xl sm:text-7xl text-rmGold drop-shadow-md"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl text-white tracking-wider">HALA MADRID</h3>
+                        <p class="text-xs text-rmGold font-semibold mt-1">Cultura de Triunfo & Excelencia</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN ESPECIAL OVP & VALORES VOCACIONALES -->
+    <section id="ovp-valores" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rmGold font-extrabold text-xs uppercase tracking-widest block mb-1">Enfoque para OVP</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-rmNavy">Lecciones Vocacionales & Valores</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1">
+                    Principios clave de vida y proyecto profesional inspirados en la mentalidad ganadora del Real Madrid.
+                </p>
+                <div class="w-16 h-1 bg-rmGold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Grid de Pilares de OVP -->
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Pilar 1: Perseverancia -->
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-rmGold transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <span class="text-[11px] text-rmGold font-bold uppercase tracking-wider block mb-1">Lema: "Hasta el Final"</span>
+                    <h3 class="font-heading font-bold text-lg text-rmNavy mb-2">Resiliencia & Perseverancia</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        En las épicas remontadas del Real Madrid aprendemos que no debemos rendirnos ante las dificultades académicas o personales. La superación constante es clave para alcanzar cualquier meta vocacional.
+                    </p>
+                </div>
+
+                <!-- Pilar 2: Trabajo en Equipo -->
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-rmGold transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <span class="text-[11px] text-rmGold font-bold uppercase tracking-wider block mb-1">Sinergia Colectiva</span>
+                    <h3 class="font-heading font-bold text-lg text-rmNavy mb-2">Trabajo en Equipo & Liderazgo</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Ningún trofeo se gana de forma individual. Un proyecto profesional exitoso requiere empatía, comunicación asertiva, saber asumir roles y potenciar el talento de cada integrante del equipo.
+                    </p>
+                </div>
+
+                <!-- Pilar 3: Disciplina y Metas -->
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-rmGold transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <span class="text-[11px] text-rmGold font-bold uppercase tracking-wider block mb-1">Cultura de Trabajo</span>
+                    <h3 class="font-heading font-bold text-lg text-rmNavy mb-2">Disciplina & Metas Altas</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El talento sin disciplina no sostiene el éxito a largo plazo. Mantener hábitos diarios de esfuerzo, planificación y búsqueda constante de la excelencia asegura un futuro profesional sólido.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Banner Motivacional OVP -->
+            <div class="mt-8 bg-navy-gradient text-white p-6 rounded-2xl border border-rmGold/40 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="space-y-1 text-center md:text-left">
+                    <h4 class="font-heading font-bold text-base text-rmGold">Aplica la Mentalidad Ganadora en Décimo EGB</h4>
+                    <p class="text-xs text-slate-300">"El éxito no es una casualidad, es la suma de preparación, disciplina y convicción."</p>
+                </div>
+                <div class="shrink-0">
+                    <span class="px-4 py-2 bg-rmGold text-rmNavy font-extrabold text-xs rounded-xl shadow-md uppercase tracking-wider block">
+                        Aidan Buenaño • 10mo
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HISTORIA EN BREVE & PALMARÉS -->
+    <section id="historia" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rmGold font-extrabold text-xs uppercase tracking-widest block mb-1">Trayectoria de Excelencia</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-rmNavy">Historia & Palmarés Récord</h2>
+                <div class="w-16 h-1 bg-rmGold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Cronología Breve -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+                
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:border-rmGold transition-all">
+                    <div class="w-9 h-9 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center font-bold text-xs mb-3">
+                        1902
+                    </div>
+                    <h3 class="font-heading font-bold text-sm text-rmNavy mb-1">Fundación Oficial</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Nace el Madrid Foot-ball Club el 6 de marzo. En 1920 el Rey Alfonso XIII le otorga el título de "Real".
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:border-rmGold transition-all">
+                    <div class="w-9 h-9 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center font-bold text-xs mb-3">
+                        1950s
+                    </div>
+                    <h3 class="font-heading font-bold text-sm text-rmNavy mb-1">Primeras 5 Copas</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Liderados por Alfredo Di Stéfano, ganan las primeras 5 Copas de Europa consecutivas de 1956 a 1960.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:border-rmGold transition-all">
+                    <div class="w-9 h-9 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center font-bold text-xs mb-3">
+                        2014
+                    </div>
+                    <h3 class="font-heading font-bold text-sm text-rmNavy mb-1">La Décima & Ramos</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        El inolvidable gol de Sergio Ramos en el minuto 93 abre la puerta para la ansiada 10.ª Champions League.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:border-rmGold transition-all">
+                    <div class="w-9 h-9 rounded-xl bg-rmNavy text-rmGold flex items-center justify-center font-bold text-xs mb-3">
+                        2024
+                    </div>
+                    <h3 class="font-heading font-bold text-sm text-rmNavy mb-1">15.ª Champions</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Reafirma su hegemonía mundial alcanzando la 15.ª Copa de Europa y consolidándose como el más ganador.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Vitrina de Palmarés Principal -->
+            <div class="bg-rmNavy rounded-3xl p-6 sm:p-8 text-white border border-rmGold/30 gold-glow">
+                <div class="text-center mb-6">
+                    <h3 class="font-heading font-bold text-xl text-white">Los Títulos Más Importantes</h3>
+                    <p class="text-xs text-slate-300">Reconocido por la FIFA como el "Mejor Club del Siglo XX"</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white/5 border border-rmGold/40 p-4 rounded-2xl">
+                        <i class="fa-solid fa-trophy text-rmGold text-2xl mb-2"></i>
+                        <span class="text-3xl sm:text-4xl font-black text-gold-gradient block">15</span>
+                        <span class="text-xs font-bold text-white block mt-1">Champions League</span>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
+                        <i class="fa-solid fa-shield-halved text-blue-400 text-2xl mb-2"></i>
+                        <span class="text-3xl sm:text-4xl font-black text-white block">36</span>
+                        <span class="text-xs font-bold text-white block mt-1">Ligas Españolas</span>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
+                        <i class="fa-solid fa-crown text-emerald-400 text-2xl mb-2"></i>
+                        <span class="text-3xl sm:text-4xl font-black text-white block">20</span>
+                        <span class="text-xs font-bold text-white block mt-1">Copas del Rey</span>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
+                        <i class="fa-solid fa-globe text-purple-400 text-2xl mb-2"></i>
+                        <span class="text-3xl sm:text-4xl font-black text-white block">8</span>
+                        <span class="text-xs font-bold text-white block mt-1">Mundiales de Clubes</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. LEYENDAS DEL CLUB -->
+    <section id="leyendas" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-rmGold font-extrabold text-xs uppercase tracking-widest block mb-1">Referentes Históricos</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-rmNavy">Leyendas del Real Madrid</h2>
+                <p class="text-slate-600 text-xs mt-1">Ejemplos de compromiso, talento y superación.</p>
+                <div class="w-16 h-1 bg-rmGold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Cristiano Ronaldo -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:border-rmGold transition-all">
+                    <div class="bg-rmNavy p-5 text-center text-white">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-rmGold/20 border-2 border-rmGold flex items-center justify-center text-xl text-rmGold mb-2">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="text-[10px] bg-rmGold text-rmNavy font-bold px-2 py-0.5 rounded-full uppercase">Dorsal 7</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-heading font-bold text-base text-rmNavy">Cristiano Ronaldo</h3>
+                        <span class="text-xs text-rmGold font-semibold block mb-2">Máximo Goleador</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            451 goles en 438 partidos. Ejemplo de ética de trabajo, disciplina física y mentalidad ganadora.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alfredo Di Stéfano -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:border-rmGold transition-all">
+                    <div class="bg-rmNavy p-5 text-center text-white">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-rmGold/20 border-2 border-rmGold flex items-center justify-center text-xl text-rmGold mb-2">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <span class="text-[10px] bg-rmGold text-rmNavy font-bold px-2 py-0.5 rounded-full uppercase">"La Saeta Rubia"</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-heading font-bold text-base text-rmNavy">Alfredo Di Stéfano</h3>
+                        <span class="text-xs text-rmGold font-semibold block mb-2">Presidente de Honor</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Transformó la historia del club ganando las primeras 5 Copas de Europa seguidas con versatilidad y entrega.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Zinedine Zidane -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:border-rmGold transition-all">
+                    <div class="bg-rmNavy p-5 text-center text-white">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-rmGold/20 border-2 border-rmGold flex items-center justify-center text-xl text-rmGold mb-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <span class="text-[10px] bg-rmGold text-rmNavy font-bold px-2 py-0.5 rounded-full uppercase">Jugador y DT</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-heading font-bold text-base text-rmNavy">Zinedine Zidane</h3>
+                        <span class="text-xs text-rmGold font-semibold block mb-2">Elegancia & Liderazgo</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Anotó la mítica volea de la 9.ª Champions y dirigió al equipo en el histórico tricampeonato de Europa consecutivo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Luka Modrić -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:border-rmGold transition-all">
+                    <div class="bg-rmNavy p-5 text-center text-white">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-rmGold/20 border-2 border-rmGold flex items-center justify-center text-xl text-rmGold mb-2">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-[10px] bg-rmGold text-rmNavy font-bold px-2 py-0.5 rounded-full uppercase">Balón de Oro</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-heading font-bold text-base text-rmNavy">Luka Modrić</h3>
+                        <span class="text-xs text-rmGold font-semibold block mb-2">Maestro del Medio Campo</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            6 Champions ganadas. Símbolo de longevidad profesional, humildad, visión de juego y calidad humana.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ESTADIO SANTIAGO BERNABÉU -->
+    <section id="estadio" class="py-16 bg-rmNavy text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-rmGold font-extrabold text-xs uppercase tracking-widest block">Vanguardia e Ingeniería</span>
+                    <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white">El Nuevo Santiago Bernabéu</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Un icono mundial de la arquitectura deportiva que refleja la constante innovación y visión de futuro del Real Madrid.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl">
+                            <i class="fa-solid fa-users text-rmGold text-lg mb-1"></i>
+                            <h4 class="font-bold text-xs text-white">Capacidad</h4>
+                            <p class="text-[11px] text-slate-300">~85,000 espectadores</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl">
+                            <i class="fa-solid fa-umbrella text-rmGold text-lg mb-1"></i>
+                            <h4 class="font-bold text-xs text-white">Techo Retráctil</h4>
+                            <p class="text-[11px] text-slate-300">Cierre en 15 minutos</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl">
+                            <i class="fa-solid fa-arrows-up-down text-rmGold text-lg mb-1"></i>
+                            <h4 class="font-bold text-xs text-white">Césped Retráctil</h4>
+                            <p class="text-[11px] text-slate-300">Hipogeo subterráneo de 30m</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl">
+                            <i class="fa-solid fa-tv text-rmGold text-lg mb-1"></i>
+                            <h4 class="font-bold text-xs text-white">Videomarcador 360°</h4>
+                            <p class="text-[11px] text-slate-300">Pantallas de última generación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="w-full bg-white/5 border border-rmGold/30 p-6 sm:p-8 rounded-3xl text-center space-y-4 gold-glow backdrop-blur-sm">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-rmGold/20 flex items-center justify-center text-rmGold text-3xl">
+                            <i class="fa-solid fa-microchip text-rmGold"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white">Innovación Vocacional & Tecnológica</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed max-w-md mx-auto">
+                            El estadio es un claro ejemplo de cómo la ingeniería moderna, la sostenibilidad y la visión emprendedora se unen para crear un espacio multifuncional apto para fútbol, conciertos y eventos internacionales.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. QUIZ / TRIVIA DE REPASO INTERACTIVO -->
+    <section id="quiz" class="py-16 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8">
+                <span class="text-rmGold font-extrabold text-xs uppercase tracking-widest block mb-1">Actividad Participativa de OVP</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-rmNavy">Quiz de Repaso Interactivo</h2>
+                <p class="text-slate-600 text-xs mt-1">Demuestra lo aprendido en la presentación para la clase.</p>
+                <div class="w-16 h-1 bg-rmGold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Caja del Quiz -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-8">
+                
+                <!-- Pregunta Contenedor -->
+                <div id="quizContent">
+                    <div class="flex justify-between items-center text-xs text-slate-400 font-semibold mb-3">
+                        <span id="quizStep">Pregunta 1 de 4</span>
+                        <span id="quizScoreCurrent" class="text-rmGold font-bold">Puntos: 0</span>
+                    </div>
+
+                    <h3 id="quizQuestionText" class="font-heading font-bold text-base sm:text-lg text-rmNavy mb-5">
+                        <!-- Pregunta JS -->
+                    </h3>
+
+                    <!-- Opciones de Botón -->
+                    <div id="quizOptions" class="space-y-2.5 mb-5">
+                        <!-- Opciones JS -->
+                    </div>
+
+                    <!-- Mensaje de Feedback -->
+                    <div id="quizFeedback" class="hidden p-3 rounded-xl text-xs font-semibold mb-4"></div>
+
+                    <div class="flex justify-end">
+                        <button id="btnNext" onclick="nextQuestion()" disabled class="px-5 py-2.5 rounded-xl bg-rmNavy text-white font-bold text-xs disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-800 transition-all">
+                            Siguiente <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Resultado Final (Oculto) -->
+                <div id="quizResult" class="hidden text-center py-6 space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-amber-50 border-2 border-rmGold flex items-center justify-center text-3xl text-rmGold">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-rmNavy">¡Felicitaciones, Aidan!</h3>
+                    <p class="text-xs text-slate-600">
+                        Has completado el quiz escolar con <span id="finalScoreText" class="font-bold text-rmGold text-lg">0</span> de 4 respuestas correctas.
+                    </p>
+                    <button onclick="restartQuiz()" class="px-6 py-2.5 rounded-xl bg-rmGold text-rmNavy font-bold text-xs hover:bg-rmGoldBright transition-all">
+                        Reiniciar Quiz <i class="fa-solid fa-rotate-right ml-1"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-rmNavy text-slate-400 py-6 text-center text-xs border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>Tarea Escolar de OVP • <strong>Aidan Buenaño</strong> (10mo EGB)</span>
+            <span class="text-rmGold font-semibold">¡Hala Madrid y nada más!</span>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DEL MENU Y QUIZ -->
+    <script>
+        // --- Menú Móvil ---
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.m-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // --- Datos del Quiz Con Enfoque Escolar & OVP ---
+        const triviaData = [
+            {
+                q: "¿Qué valor de OVP nos enseña el lema 'Hasta el final' en las remontadas del Real Madrid?",
+                opts: ["Procrastinación", "Resiliencia y Perseverancia", "Individualismo", "Conformismo"],
+                correct: 1
+            },
+            {
+                q: "¿Cuántas Copas de Europa (Champions League) ha conquistado el Real Madrid?",
+                opts: ["10 Champions", "12 Champions", "15 Champions", "18 Champions"],
+                correct: 2
+            },
+            {
+                q: "¿Por qué el trabajo en equipo es indispensable según la filosofía del club?",
+                opts: [
+                    "Porque un logro importante requiere la sinergia y esfuerzo de todos",
+                    "Porque solo importa el trabajo de una persona",
+                    "Para no entrenar entre semana",
+                    "No es importante en proyectos vocacionales"
+                ],
+                correct: 0
+            },
+            {
+                q: "¿Quién es el máximo goleador en la historia del Real Madrid con 451 goles?",
+                opts: ["Raúl González", "Luka Modrić", "Zinedine Zidane", "Cristiano Ronaldo"],
+                correct: 3
+            }
+        ];
+
+        let indexQ = 0;
+        let scoreQuiz = 0;
+        let selected = false;
+
+        function renderQuestion() {
+            const current = triviaData[indexQ];
+            document.getElementById('quizStep').textContent = `Pregunta ${indexQ + 1} de ${triviaData.length}`;
+            document.getElementById('quizScoreCurrent').textContent = `Puntos: ${scoreQuiz}`;
+            document.getElementById('quizQuestionText').textContent = current.q;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            const feedback = document.getElementById('quizFeedback');
+            feedback.classList.add('hidden');
+            document.getElementById('btnNext').disabled = true;
+            selected = false;
+
+            current.opts.forEach((option, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-3 rounded-xl border border-slate-200 hover:border-rmGold hover:bg-slate-50 text-xs font-medium text-slate-700 transition-all flex items-center justify-between';
+                btn.innerHTML = `<span>${option}</span> <i class="fa-regular fa-circle text-slate-300"></i>`;
+                btn.onclick = () => selectQuizOption(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectQuizOption(choice, btnElement) {
+            if (selected) return;
+            selected = true;
+
+            const current = triviaData[indexQ];
+            const optsButtons = document.getElementById('quizOptions').children;
+            const feedback = document.getElementById('quizFeedback');
+
+            if (choice === current.correct) {
+                scoreQuiz++;
+                btnElement.className = 'w-full text-left p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-xs flex items-center justify-between';
+                btnElement.querySelector('i').className = 'fa-solid fa-circle-check text-emerald-600';
+                
+                feedback.textContent = '¡Correcto! Excelente análisis.';
+                feedback.className = 'p-3 rounded-xl text-xs font-bold mb-4 bg-emerald-100 text-emerald-900 border border-emerald-300';
+            } else {
+                btnElement.className = 'w-full text-left p-3 rounded-xl border-2 border-red-400 bg-red-50 text-red-900 font-bold text-xs flex items-center justify-between';
+                btnElement.querySelector('i').className = 'fa-solid fa-circle-xmark text-red-500';
+
+                // Resaltar respuesta correcta
+                optsButtons[current.correct].className = 'w-full text-left p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-xs flex items-center justify-between';
+                optsButtons[current.correct].querySelector('i').className = 'fa-solid fa-circle-check text-emerald-600';
+
+                feedback.textContent = `Incorrecto. La respuesta correcta es: ${current.opts[current.correct]}`;
+                feedback.className = 'p-3 rounded-xl text-xs font-bold mb-4 bg-red-100 text-red-900 border border-red-300';
+            }
+
+            feedback.classList.remove('hidden');
+            document.getElementById('quizScoreCurrent').textContent = `Puntos: ${scoreQuiz}`;
+            document.getElementById('btnNext').disabled = false;
+        }
+
+        function nextQuestion() {
+            indexQ++;
+            if (indexQ < triviaData.length) {
+                renderQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quizContent').classList.add('hidden');
+            document.getElementById('quizResult').classList.remove('hidden');
+            document.getElementById('finalScoreText').textContent = scoreQuiz;
+        }
+
+        function restartQuiz() {
+            indexQ = 0;
+            scoreQuiz = 0;
+            document.getElementById('quizResult').classList.add('hidden');
+            document.getElementById('quizContent').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        // Cargar quiz
+        renderQuestion();
+    </script>
+</body>
+</html>
